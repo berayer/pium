@@ -1,11 +1,8 @@
 server:
   port: 6001
 spring:
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3388/pium?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
-    username: root
-    password: root
+  profiles:
+    active: home
   file-storage:
     default-platform: local-plus-1
     thumbnail-suffix: ".min.jpg"
