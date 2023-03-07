@@ -1,0 +1,35 @@
+server:
+  port: 6001
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3388/pium?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+  file-storage:
+    default-platform: local-plus-1
+    thumbnail-suffix: ".min.jpg"
+    local-plus:
+      - platform: local-plus-1
+        enable-access: true
+        enable-storage: true
+        path-patterns: /file/**
+        storage-path: D:/img/
+        domain: ""
+        base-path: local-plus
+  servlet:
+    multipart:
+      max-file-size: 10MB
+  jackson:
+    # 转换JSON时忽略null值
+    default-property-inclusion: non_null
+############## Sa-Token 配置 (文档: https://sa-token.cc) ##############
+sa-token:
+  # 令牌名称
+  token-name: authentication
+  # 是否允许同一账号并发登录
+  is-concurrent: false
+  # 是否输出操作日志
+  is-log: false
+  # token风格
+  token-style: tik
